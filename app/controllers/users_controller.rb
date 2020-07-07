@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.ApplicationController
-    render json: @paintings
+    render json: @users
   end
 
   def show
