@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   #   namespace :v1 do
       resources :movies
       resources :shelves
+      resources :users
       post '/auth', to: 'auth#create'
       get '/current_user', to: 'auth#show'
       get '/movies', to: 'movies#index'

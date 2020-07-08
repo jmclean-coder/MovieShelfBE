@@ -32,13 +32,13 @@ user2 = User.create(username:"Josh", password_digest: "lindyhopping")
 shelf1 = Shelf.create(user_id: user1.id)
 shelf2 = Shelf.create(user_id: user2.id)
 
-movie_shelf1 = MovieShelf.create(shelf_id:shelf1.id, movie_id: Movie.all[rand(3)].id)
-movie_shelf2 = MovieShelf.create(shelf_id:shelf1.id, movie_id: Movie.all[rand(3)].id)
-movie_shelf3 = MovieShelf.create(shelf_id:shelf1.id, movie_id: Movie.all[rand(3)].id)
+movie_shelf1 = MovieShelf.create(shelf_id:shelf1.id, movie_id: Movie.all[rand(6)].id)
+movie_shelf2 = MovieShelf.create(shelf_id:shelf1.id, movie_id: Movie.all[rand(5)].id)
+movie_shelf3 = MovieShelf.create(shelf_id:shelf1.id, movie_id: Movie.all[rand(4)].id)
 
-movie_shelf4 = MovieShelf.create(shelf_id:shelf2.id, movie_id: Movie.all[rand(6)].id)
-movie_shelf5 = MovieShelf.create(shelf_id:shelf2.id, movie_id: Movie.all[rand(6)].id)
-movie_shelf6 = MovieShelf.create(shelf_id:shelf2.id, movie_id: Movie.all[rand(6)].id)
+movie_shelf4 = MovieShelf.create(shelf_id:shelf2.id, movie_id: Movie.all[rand(3)].id)
+movie_shelf5 = MovieShelf.create(shelf_id:shelf2.id, movie_id: Movie.all[rand(2)].id)
+movie_shelf6 = MovieShelf.create(shelf_id:shelf2.id, movie_id: Movie.all[rand(1)].id)
 puts "done!"
 
 
