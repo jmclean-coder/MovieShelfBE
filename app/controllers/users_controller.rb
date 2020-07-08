@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = user.find_by(params[:id])
+    user = User.find(params[:id])
     if user
       render json: user, except: [:created_at, :updated_at]
     else
@@ -17,9 +17,9 @@ class UsersController < ApplicationController
     new_user = User.new(user_params)
     if new_user.valid?
       new_user.save
-      render json: UserSerializer.new(new_user), status: 201
+      render json: user, except: [:created_at, :updated_at]
     else
-      render :json: {errors: new_user.errors.full_messages}
+      render json: {errors: new_user.errors.full_messages}
     end
   end
 
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     user.update(user_params)
     if user.valid?
-      render json: UserSerializer.new(user)
+      render json: user, except: [:created_at, :updated_at]
     else
       render json: {errors: user.errors.full_messages}
     end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def destroy
     user = User.find(params[:id])
     user.destroy
-    render json: UserSerializer.new(user)
+    render json: user, except: [:created_at, :updated_at]
   end
 
   def user_params
