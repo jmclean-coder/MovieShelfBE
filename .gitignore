@@ -27,4 +27,4 @@
 /config/master.key
 
 # Ignore API adapters to keep keys private
-/app/adapters/open_move_db.rb
+
