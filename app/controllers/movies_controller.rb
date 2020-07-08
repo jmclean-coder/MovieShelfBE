@@ -8,26 +8,27 @@ class MoviesController < ApplicationController
   def show
     movie = Movie.find_by(id: params[:id])
     if movie
-      render json: movie, except: [:created_at, :updated_at]
+      render json: movie, except: [:created_at, :updated_at] #handle in serializer later
     else
       render json: {message: 'Movie not found'}
     end
   end
 
   def create
-    movie = Movie.create(movie_params)
+    movie = Movie.new(movie_params)
     if movie.valid?
-      render json: MovieSerializer.new(movie)
+      movie.save
+      render json: movie, except: [:created_at, :updated_at] #handle in serializer later
     else
-      render json: {errors: movie.errors.full_messages}
+      render json: {message: movie.errors.full_messages}
     end
   end
 
   def update
     movie = Movie.find(params[:id])
-    movie.update(movie_prams)
+    movie.update(movie_params)
     if movie.valid?
-      render json: MovieSerializer.new(movie)
+      render json: movie, except: [:created_at, :updated_at]
     else
       render json: {errors: movie.errors.full_messages}
     end
@@ -36,7 +37,7 @@ class MoviesController < ApplicationController
   def destroy
     movie = Movie.find(params[:id])
     movie.destroy
-    render json: MovieSerializer.new(movie)
+    render json: {message: 'Movie deleted'}
   end
 
   private
