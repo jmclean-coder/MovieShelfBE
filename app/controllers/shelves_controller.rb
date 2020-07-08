@@ -1,4 +1,10 @@
 class ShelvesController < ApplicationController
+
+  def index
+    shelves = Shelf.all
+    render json: shelves, except: [:created_at, :updated_at]
+  end
+
   def show
     shelf = Shelf.find(params[:id])
     render json: shelf, except: [:created_at, :updated_at]
