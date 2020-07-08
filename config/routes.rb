@@ -7,6 +7,10 @@ Rails.application.routes.draw do
       resources :shelves
       post '/auth', to: 'auth#create'
       get '/current_user', to: 'auth#show'
+      get '/movies', to: 'movies#index'
+      get '/movies/:id', to 'movies#show'
+      get '/shelves', to: 'shelves#index'
+      get '/shelves/:id', to 'shelves#show'
     end
   end
 end
