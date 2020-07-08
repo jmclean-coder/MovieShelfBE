@@ -17,6 +17,7 @@ gem 'puma', '~> 4.1'
 gem 'bcrypt', '~> 3.1.7' #uncommented for model testing
 gem 'active_model_serializers', '~> 0.10.0'
 
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -42,3 +43,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'jwt'
+
+gem 'rest-client'
+
+gem "faker", "~> 2.13"
