@@ -26,8 +26,8 @@ movies.each do |movie|
     new_movie.save
 end
 
-user1 = User.create(username:"Justin", password_digest: "downwiththeclown")
-user2 = User.create(username:"Josh", password_digest: "lindyhopping")
+user1 = User.create(username:"Justin", password: "downwiththeclown")
+user2 = User.create(username:"Josh", password: "lindyhopping")
 
 shelf1 = Shelf.create(user_id: user1.id)
 shelf2 = Shelf.create(user_id: user2.id)
