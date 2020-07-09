@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def index
     users = User.all
-    render json: { users: users } 
+    render json: users 
   end
 
   def show
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if user
       render json: { user: UserSerializer.new(user) }, status: :accepted
     else
-      render json: {message: 'We cannot find that user'}
+      render json: {message: 'We cannot find that user'}, status: :not_found
     end
   end
 
