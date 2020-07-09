@@ -2,13 +2,13 @@ class UsersController < ApplicationController
 
   def index
     users = User.all
-    render json: { users, except: [:created_at, :updated_at] } 
+    render json: { users: users } 
   end
 
   def show
     user = User.find(params[:id])
     if user
-      render json: {UserSerializer.new(user)}
+      render json: { user: UserSerializer.new(user) }, status: :accepted
     else
       render json: {message: 'We cannot find that user'}
     end
@@ -16,10 +16,10 @@ class UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
-    if new_user.valid?
-      render json: { user: UserSerializer.new(@user) }, status: :created
+    if user.valid?
+      render json: { user: UserSerializer.new(user) }, status: :created
     else
-      render json: {errors: user.errors.full_messages}
+      render json: { errors: user.errors.full_messages }, status: :not_acceptable
     end
   end
 
@@ -27,19 +27,20 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     user.update(user_params)
     if user.valid?
-      render json: UserSerializer.new(user)
+      render json: { user: UserSerializer.new(user) }, status: :created
     else
-      render json: {errors: user.errors.full_messages}
+      render json: { errors: user.errors.full_messages }, status: :not_acceptable
     end
   end
 
   def destroy
     user = User.find(params[:id])
     user.destroy
-    render json: {user, except: [:created_at, :updated_at]} 
+    render json: {user: user} 
   end
 
   def user_params
     params.require(:user).permit(:username, :password)
   end
+
 end
