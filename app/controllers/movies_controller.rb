@@ -8,9 +8,9 @@ class MoviesController < ApplicationController
   def show
     movie = Movie.find_by(id: params[:id])
     if movie
-      render json: movie, except: [:created_at, :updated_at] #handle in serializer later
+      render json: { movie: MovieSerializer.new(movie) }, status: :ok 
     else
-      render json: {message: 'Movie not found'}
+      render json: { message: 'Movie not found' }, status: :not_found
     end
   end
 
@@ -18,9 +18,9 @@ class MoviesController < ApplicationController
     movie = Movie.new(movie_params)
     if movie.valid?
       movie.save
-      render json: movie, except: [:created_at, :updated_at] #handle in serializer later
+      render json: { movie: MovieSerializer.new(movie) }, status: :created
     else
-      render json: {message: movie.errors.full_messages}
+      render json: { message: movie.errors.full_messages }
     end
   end
 
@@ -28,9 +28,9 @@ class MoviesController < ApplicationController
     movie = Movie.find(params[:id])
     movie.update(movie_params)
     if movie.valid?
-      render json: movie, except: [:created_at, :updated_at]
+      render json: { movie: MovieSerializer.new(movie) }, status: :accepted
     else
-      render json: {errors: movie.errors.full_messages}
+      render json: { errors: movie.errors.full_messages } 
     end
   end
 
