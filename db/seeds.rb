@@ -22,7 +22,7 @@ avengers_ult_2 = MovieDatabase.get_movie("tt0803093")
 movies = [avengers, avengers_infinity, avengers_endgame, avengers_ultron, avengers_ult_1, avengers_ult_2]
 
 movies.each do |movie|
-    new_movie = Movie.new(title: movie["Title"], year: movie["Year"], runtime: movie["Runtime"], genre: movie["Genre"], poster: movie["Poster"], imdb_id: movie["imdbID"])
+    new_movie = Movie.new(title: movie["Title"], year: movie["Year"], genre: movie["Genre"], poster: movie["Poster"], imdb_id: movie["imdbID"])
     new_movie.save
 end
 
