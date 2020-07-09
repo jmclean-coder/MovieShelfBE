@@ -2,19 +2,18 @@ class ShelvesController < ApplicationController
 
   def index
     shelves = Shelf.all
-    render json: shelves, except: [:created_at, :updated_at]
+    render json: shelves
   end
 
   def show
     shelf = Shelf.find(params[:id])
-    render json: shelf, except: [:created_at, :updated_at]
+    render json: {shelf: ShelfSerializer.new(shelf)}
   end
 
   def create
-    shelf = Shelf.new(shelf_params)
+    shelf = Shelf.create(shelf_params)
     if shelf.valid?
-      shelf.save
-      render json: shelf, except: [:created_at, :updated_at]
+      render json: { shelf: ShelfSerializer.new(shelf) }, status: :created
     else
       render json: {errors: shelf.errors.full_messages}
     end
@@ -24,7 +23,7 @@ class ShelvesController < ApplicationController
     shelf = Shelf.find(params[:id])
     shelf.update(shelf_params)
     if shelf.valid?
-      render json: shelf, except: [:created_at, :updated_at]
+      render json: {shelf: ShelfSerializer.new(shelf)}
     else
       render json: {errors: shelf.errors.full_messages}
     end
@@ -33,7 +32,7 @@ class ShelvesController < ApplicationController
   def destroy
     shelf = Shelf.find(params[:id])
     shelf.destroy
-    render json: shelf, except: [:created_at, :updated_at]
+    render json: {message: "Shelf Deleted!" }, status: :ok
   end
 
   private
