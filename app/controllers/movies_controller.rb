@@ -18,6 +18,7 @@ class MoviesController < ApplicationController
     movie = Movie.new(movie_params)
     if movie.valid?
       movie.save
+      shelf_movie = MovieShelf.create(movie_id: movie.id, shelf_id: 1)
       render json: { movie: MovieSerializer.new(movie) }, status: :created
     else
       render json: { message: movie.errors.full_messages }
