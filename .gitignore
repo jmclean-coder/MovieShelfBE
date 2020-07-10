@@ -28,3 +28,6 @@
 
 # Ignore API adapters to keep keys private
 
+
+# Ignore application configuration
+/config/application.yml
