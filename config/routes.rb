@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :movies
       resources :shelves
       resources :users
+      resources :movie_shelves, only: [:index, :destroy] 
       post '/auth', to: 'auth#create'
       get '/current_user', to: 'auth#show'
       get '/movies', to: 'movies#index'
