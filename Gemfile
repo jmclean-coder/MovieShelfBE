@@ -47,3 +47,5 @@ gem 'jwt'
 gem 'rest-client'
 
 gem "faker", "~> 2.13"
+
+gem "figaro"
