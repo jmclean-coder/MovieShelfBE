@@ -15,8 +15,14 @@ class MoviesController < ApplicationController
   end
 
   def create
-    movie = Movie.find_or_create_by(movie_params)
-    shelf_movie = MovieShelf.create(movie_id: movie.id, shelf_id: 1)
+    # movie = Movie.find_or_create_by(movie_params)
+    if Movie.find_by(imdb_id: movie_params["imdb_id"])
+      movie = Movie.find_by(imdb_id: movie_params["imdb_id"])
+    else
+      movie = Movie.create(movie_params)
+    end
+    shelf_movie = MovieShelf.find_or_create_by(movie_id: movie.id, shelf_id: 1)
+    # byebug
     if movie.valid?
       render json: { movie: MovieSerializer.new(movie) }, status: :created
     else
@@ -25,6 +31,7 @@ class MoviesController < ApplicationController
   end
 
   def update
+    # byebug
     movie = Movie.find(params[:id])
     movie.update(movie_params)
     if movie.valid?
