@@ -37,17 +37,22 @@ The backend of the application leverages Ruby on Rails API functionality to rece
 * PostgreSQL (12.3)
 
 ### Front End Dependencies
-Refer to the backend repo at ```link``` for instructions to set up the front-end interface and ReactJS
+Refer to the frontend repo at ```https://github.com/jmclean-coder/MovieShelfFE``` for instructions to set up the front-end interface and ReactJS
 
 ### Installation:
 
 Download this entire git repository to your computer and place in your desired install directory. If you don't have the above dependencies, in your terminal run `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"` to install Homebrew, then run `brew install rbenv ruby-build` to install Ruby, then `rbenv install 2.7.1` `rbenv global 2.7.1` and `ruby -v` to confirm. Finally, to install Rails, run `gem install rails -v 6.0.2.2` `rbenv rehash` and `rails -v` to confirm. If you need to install PostgreSQL, follow their instructions here: https://postgresapp.com/.
 
-
 Via a terminal interface navigate to ```install_directory/frontend```. From this location execute ```bundle install``` to install all other required gem packages. 
 
+### External API Setup - Backend/Seeding your Database
+Seeding your database with test data is partially setup for you. This requires the setup of the Rapid API Movie Database with your own personal key. Visit ```https://rapidapi.com/rapidapi/api/movie-database-imdb-alternative``` to obtain a key and test your endpoints.
+Once you have your key, navigate to the root directory of the project (MOVIESHELF-BACKEND) and check the gem file for ```gem 'figaro'``` this should have installed when you ran bundle install in the previous steps. Now run ```bundle exec figaro install```. This will create an ```application.yml``` file in your project root directory /config. This file will automatically be added to the .gitignore. In this file type and save: ```movDb_api_key: 'yourapikey'```. Double check the app/adapters/movie_database.rb file to make sure the string matches what you typed before the colon in the application.yml file.
+
+In App.js on line 10, notice that the URL is being passed the api key via the environment variable, instead of it be hard-coded in. To maintain security, be sure to use the environment varible to refer to your key anywhere you use it.
+
 ### Running:
-This project was designed as a proof of concept so it requires hosting locally. To start hosting the local server, start by opening PostgreSQL and starting the server. Then, in your terminal navigate to the directory you've installed this repo in. Once there, execute `rails db:migrate` `rails db:seed` and finally ```rails s```. The rails server is functioning solely as a backend API for local development, so you do not need to navigate to localhost:3000 in your browser unless you'd like to test to make sure the database is running correctly. It's recommended to run the backend on port 3000 then the front end on a different port.
+This project was designed as a proof of concept so it requires hosting locally. To start hosting the local server, start by opening PostgreSQL and starting the server. Then, in your terminal navigate to the directory you've installed this repo in. (note: You must complete External API Setup before seeding your database!) Once there, execute `rails db:migrate`,`rails db:seed`, and finally ```rails s```. The rails server is functioning solely as a backend API for local development, so you do not need to navigate to localhost:3000 in your browser unless you'd like to test to make sure the database is running correctly. It's recommended to run the backend on port 3000 then the front end on a different port.
 
 ### License
 Copyright 2020 Colton Kaiser, Joshua Mclean, Justin Langlinais, Trevor Low

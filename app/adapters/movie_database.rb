@@ -1,7 +1,7 @@
 require "json"
 require "rest-client"
 
-API_KEY = ENV['OMDB_api_key']
+API_KEY = ENV['movDb_api_key']
 class MovieDatabase
 
     def self.get_movie(movieID)
