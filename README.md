@@ -37,7 +37,7 @@ The backend of the application leverages Ruby on Rails API functionality to rece
 * PostgreSQL (12.3)
 
 ### Front End Dependencies
-Refer to the frontend repo at ```https://github.com/jmclean-coder/MovieShelfFE``` for instructions to set up the front-end interface and ReactJS
+Refer to the frontend repo at https://github.com/ckaiser258/MovieShelfFE for instructions to set up the front-end interface and ReactJS
 
 ### Installation:
 
