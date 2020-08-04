@@ -1,4 +1,4 @@
-### Flatiorn School: Seattle 0420 Cohort
+### Flatiron School: Seattle 0420 Cohort
 # MovieShelf: Module 4 Project
 
 ### Description: 
@@ -21,7 +21,7 @@ This project was designed to enable a user to build and manage a library of movi
 ![Edit Form](README_assets/movie_shelf_edit_form.gif)
 
 
-The backend of the application leverages Ruby on Rails API functionality to receive and send AJAX requests in a JSON formate as well as an external API to receive movie information. The interactive frontend is built on ReactJS and React Bootstrap.
+The backend of the application leverages Ruby on Rails API functionality to receive and send AJAX requests in a JSON formate as well as an external API to receive movie information. The interactive frontend is built on ReactJS, HTML, and CSS.
 
 ### Team:
 * Colton Kaiser
