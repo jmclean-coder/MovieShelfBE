@@ -15,6 +15,7 @@ class MoviesController < ApplicationController
   end
 
   def create
+    # byebug
     # movie = Movie.find_or_create_by(movie_params)
     if Movie.find_by(imdb_id: movie_params["imdb_id"])
       movie = Movie.find_by(imdb_id: movie_params["imdb_id"])
@@ -50,6 +51,6 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :year,:poster, :genre, :imdb_id)
+    params.require(:movie).permit( :title, :year, :poster, :genre, :imdb_id, :plot, :mpa_rated, :director, ratings: [:Source, :Value])
   end
 end
