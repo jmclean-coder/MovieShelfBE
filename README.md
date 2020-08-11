@@ -4,21 +4,37 @@
 ### Description: 
 This project was designed to enable a user to build and manage a library of movies using an external as well as local API. Through the tool a user can:
 
-* Basic Routing with React Router
+* Routing with React Router
 
-![Basic Routing](README_assets/movie_shelf_routes.gif)
+![Pages](README_assets/pages_mvs.gif)
 
-* Search Movies From OMDB
+* Search movies from OMDB and add them to your shelf
 
-![Search Movies](README_assets/movie_shelf_library.gif)
+![Search Movies](README_assets/add_mvs.gif)
 
-* Add a Movie to Your Shelf and Delete it.
+* Handling of invalid search/can't find movie
 
-![Basic Shelf Functions](README_assets/movie_shelf_add_delete.gif)
+![Search Error](README_assets/error_mvs.gif)
 
-* Edit a Movie's Poster
+* View Movie Details
 
-![Edit Form](README_assets/movie_shelf_edit_form.gif)
+![Details](README_assets/details_mvs.gif)
+
+* Filter movies on your shelf by genre
+
+![Filter Genre](README_assets/filter_mvs.gif)
+
+* See the default movie poster
+
+![Default](README_assets/default_mvs.gif)
+
+* Edit a movie's poster
+
+![Edit Form](README_assets/edit_mvs.gif)
+
+* Delete a movie
+
+![Delete](README_assets/delete_mvs.gif)
 
 
 The backend of the application leverages Ruby on Rails API functionality to receive and send AJAX requests in a JSON formate as well as an external API to receive movie information. The interactive frontend is built on ReactJS and React Bootstrap.
