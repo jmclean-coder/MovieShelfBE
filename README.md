@@ -1,4 +1,4 @@
-### Flatiorn School: Seattle 0420 Cohort
+### Flatiron School: Seattle 0420 Cohort
 # MovieShelf: Module 4 Project
 
 ### Description: 
@@ -37,7 +37,7 @@ This project was designed to enable a user to build and manage a library of movi
 ![Delete](README_assets/delete_mvs.gif)
 
 
-The backend of the application leverages Ruby on Rails API functionality to receive and send AJAX requests in a JSON formate as well as an external API to receive movie information. The interactive frontend is built on ReactJS and React Bootstrap.
+The backend of the application leverages Ruby on Rails API functionality to receive and send AJAX requests in a JSON formate as well as an external API to receive movie information. The interactive frontend is built on ReactJS, HTML, and CSS.
 
 ### Team:
 * Colton Kaiser
@@ -53,7 +53,7 @@ The backend of the application leverages Ruby on Rails API functionality to rece
 * PostgreSQL (12.3)
 
 ### Front End Dependencies
-Refer to the frontend repo at ```https://github.com/jmclean-coder/MovieShelfFE``` for instructions to set up the front-end interface and ReactJS
+Refer to the frontend repo at https://github.com/ckaiser258/MovieShelfFE for instructions to set up the front-end interface and ReactJS
 
 ### Installation:
 
@@ -68,7 +68,7 @@ Once you have your key, navigate to the root directory of the project (MOVIESHEL
 In App.js on line 10, notice that the URL is being passed the api key via the environment variable, instead of it be hard-coded in. To maintain security, be sure to use the environment varible to refer to your key anywhere you use it.
 
 ### Running:
-This project was designed as a proof of concept so it requires hosting locally. To start hosting the local server, start by opening PostgreSQL and starting the server. Then, in your terminal navigate to the directory you've installed this repo in. (note: You must complete External API Setup before seeding your database!) Once there, execute `rails db:migrate`,`rails db:seed`, and finally ```rails s```. The rails server is functioning solely as a backend API for local development, so you do not need to navigate to localhost:3000 in your browser unless you'd like to test to make sure the database is running correctly. It's recommended to run the backend on port 3000 then the front end on a different port.
+This project was designed as a proof of concept so it requires hosting locally. To start hosting the local server, start by opening PostgreSQL and starting the server. Then, in your terminal navigate to the directory you've installed this repo in. (note: You must complete External API Setup before seeding your database!) Once there, execute `rails db:create`, `rails db:migrate`,`rails db:seed`, and finally ```rails s```. The rails server is functioning solely as a backend API for local development, so you do not need to navigate to localhost:3000 in your browser unless you'd like to test to make sure the database is running correctly. It's recommended to run the backend on port 3000 then the front end on a different port.
 
 ### License
 Copyright 2020 Colton Kaiser, Joshua Mclean, Justin Langlinais, Trevor Low
