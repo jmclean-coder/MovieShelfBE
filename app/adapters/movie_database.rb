@@ -17,6 +17,6 @@ class MovieDatabase
 end
 
 # MovieDatabase.search("avengers")
-# MovieDatabase.get_movie("tt0848228")
+MovieDatabase.get_movie("tt0848228")
 
 
