@@ -8,12 +8,12 @@ Shelf.destroy_all
 
 
 # search_results = MovieDatabase.search("avengers")
-avengers = MovieDatabase.get_movie("tt0848228")
-avengers_infinity = MovieDatabase.get_movie("tt4154756")
-avengers_endgame = MovieDatabase.get_movie("tt4154796")
-avengers_ultron = MovieDatabase.get_movie("tt2395427")
-avengers_ult_1 = MovieDatabase.get_movie("tt0491703")
-avengers_ult_2 = MovieDatabase.get_movie("tt0803093")
+avengers = MovieDatabase.get_movie('tt0848228')
+avengers_infinity = MovieDatabase.get_movie('tt4154756')
+avengers_endgame = MovieDatabase.get_movie('tt4154796')
+avengers_ultron = MovieDatabase.get_movie('tt2395427')
+avengers_ult_1 = MovieDatabase.get_movie('tt0491703')
+avengers_ult_2 = MovieDatabase.get_movie('tt0803093')
 
 # pp search_results
 # pp avengers
