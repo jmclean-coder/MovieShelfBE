@@ -66,7 +66,7 @@ user1 = User.create(username:"Justin", password: "downwiththeclown")
 shelf1 = Shelf.create(user_id: user1.id)
 
 
-movie_shelf1 = MovieShelf.create(shelf_id:shelf1.id, movie_id: Movie.first)
+movie_shelf1 = MovieShelf.create(shelf_id:shelf1.id, movie_id: Movie.first.id)
 # movie_shelf2 = MovieShelf.create(shelf_id:shelf1.id, movie_id: Movie.all[rand(6)].id)
 # movie_shelf3 = MovieShelf.create(shelf_id:shelf1.id, movie_id: Movie.all[rand(6)].id)
 
