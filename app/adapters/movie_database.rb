@@ -14,7 +14,5 @@ class MovieDatabase
     end
 end
 
-# MovieDatabase.search("avengers")
-MovieDatabase.get_movie("tt0848228")
 
 
