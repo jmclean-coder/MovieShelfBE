@@ -1,9 +1,7 @@
 require "json"
 require "rest-client"
-
 API_KEY = ENV['movDb_api_key']
 class MovieDatabase
-
     def self.get_movie(movieID)
         url = "https://movie-database-imdb-alternative.p.rapidapi.com/?i=#{movieID}&r=json"
         response = RestClient.get(url, headers={
